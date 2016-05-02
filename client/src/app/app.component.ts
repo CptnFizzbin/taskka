@@ -1,23 +1,18 @@
 import {Component} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
-import {WelcomeComponent} from './welcome/weclome.component';
-import {ToolsComponent} from './tools/tools.component';
-import {ToolsService} from './tools/tools.service';
-import {NavbarComponent} from "./navbar/navbar.component";
+import {TaskService} from './tasks/task.service';
+
+import {NavbarComponent} from './navbar/navbar.component';
+import {TasksComponent} from './tasks/tasks.component';
 
 @RouteConfig([
     {
-        path: '/welcome',
-        name: 'Welcome',
-        component: WelcomeComponent,
+        path: '/tasks',
+        name: 'Tasks',
+        component: TasksComponent,
         useAsDefault: true
-    },
-    {
-        path: '/tools',
-        name: 'Tools',
-        component: ToolsComponent
     }
 ])
 
@@ -29,7 +24,7 @@ import {NavbarComponent} from "./navbar/navbar.component";
     providers: [
         ROUTER_PROVIDERS,
         HTTP_PROVIDERS,
-        ToolsService
+        TaskService
     ],
     selector: 'my-app',
     templateUrl: 'app/app.html'
