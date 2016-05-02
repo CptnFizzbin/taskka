@@ -1,0 +1,6 @@
+#tools-page
+    .header
+        h1 Included Tools!
+    .list
+        .list-item(*ngFor="#tool of tools")
+            tool-card([tool]="tool")

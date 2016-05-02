@@ -1,0 +1,35 @@
+.tool-card {
+  margin-bottom: 1rem;
+  box-shadow: 0 0 0 0 rgba(50, 50, 50, 0.75);
+
+  transition: box-shadow 0.5s;
+
+  border: 1px solid #c0c0c0;
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+
+    img {
+      max-height: calc(125px - 2rem);
+    }
+  }
+
+  .name {
+    display: block;
+    background: #000066;
+    color: #000000;
+    padding: 1rem;
+
+    transition: background 0.5s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 20px 0 rgba(50, 50, 50, 0.75);
+    .name {
+      background: darken(#000066, 10%);
+    }
+  }
+}

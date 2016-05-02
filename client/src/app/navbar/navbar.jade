@@ -1,0 +1,5 @@
+.navbar.navbar-dark.bg-inverse
+    a.navbar-brand([routerLink]='["Welcome"]') Taskka
+    ul.nav.navbar-nav
+        li.nav-item([class.active]="isRouteActive(['Tools'])")
+            a.nav-link([routerLink]='["Tools"]') Tools
