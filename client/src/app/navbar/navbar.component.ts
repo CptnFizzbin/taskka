@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {RouterLink, Router} from 'angular2/router';
 
 @Component({
-    selector: 'task-navbar',
+    selector: 'tka-navbar',
     templateUrl: 'app/navbar/navbar.html',
     directives: [
         RouterLink
