@@ -1,9 +1,13 @@
 import {Component, OnInit} from 'angular2/core';
 import {TaskService} from './task.service';
 import {Task} from './../models/task';
+import {TaskComponenet} from "./task.component";
 
 @Component({
-    templateUrl: 'app/tasks/tasks.html'
+    templateUrl: 'app/tasks/tasks.html',
+    directives: [
+        TaskComponenet
+    ]
 })
 export class TasksComponent implements OnInit {
     public tasks:Array<Task>;

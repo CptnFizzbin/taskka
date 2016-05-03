@@ -3,7 +3,7 @@ h1 tasks
     .col-lg-4
         ul
             li(*ngFor='#task of tasks')
-                span.name {{task.name}} &nbsp;
+                tka-task([task]="task")
                 a((click)='deleteTask(task)') Delete
             li
                 form((ngSubmit)='addTask()')
