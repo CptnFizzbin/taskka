@@ -1,3 +1,11 @@
 h1 tasks
-ul
-    li(*ngFor="#task of tasks") {{task.name}}
+.row
+    .col-lg-4
+        ul
+            li(*ngFor='#task of tasks') {{task.name}}
+            li
+                form((ngSubmit)='addTask()')
+                    .input-group
+                        input.form-control(type='text', [(ngModel)]='newTask.name', required, ngControl='name')
+                        span.input-group-btn
+                            button.btn.btn-secondary(type='submit', [disabled]="creatingNewTask") Add

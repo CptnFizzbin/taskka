@@ -1,21 +1,55 @@
 import {Component, OnInit} from 'angular2/core';
 import {TaskService} from './task.service';
+import {Task} from './task';
 
 @Component({
     templateUrl: 'app/tasks/tasks.html'
 })
 export class TasksComponent implements OnInit {
-    public tasks:Array<Object> = [];
+    public tasks:Array<Task>;
+    public newTask:Task;
+    public creatingNewTask:Boolean;
 
     constructor(private _taskService:TaskService) {
-
     }
 
     public ngOnInit() {
+        this.tasks = [];
+        this.creatingNewTask = false;
+
+        this._clearNewTask();
+        this._loadAllTasks();
+    }
+
+    public addTask() {
+        this.creatingNewTask = true;
+
+        this._taskService.post(this.newTask)
+            .subscribe(
+                data => {
+                    this.tasks.push(data);
+                    this._clearNewTask();
+                    this.creatingNewTask = false;
+                },
+                error => {
+                    console.log(error);
+                }
+            );
+    }
+
+    private _clearNewTask() {
+        this.newTask = <Task>{ name: '' };
+    }
+
+    private _loadAllTasks() {
         this._taskService.getAll()
-            .subscribe(data => {
-                console.log(data);
-                this.tasks = data;
-            });
+            .subscribe(
+                data => {
+                    this.tasks = data;
+                },
+                error => {
+                    console.log(error);
+                }
+            );
     }
 }

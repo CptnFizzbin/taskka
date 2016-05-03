@@ -45,12 +45,14 @@ module.exports = config = {
     jade: {
         dev: {
             pretty: true,
-            compileDebug: true
+            compileDebug: true,
+            doctype: 'html'
         },
 
         dist: {
             pretty: false,
-            compileDebug: false
+            compileDebug: false,
+            doctype: 'html'
         }
     }
 
