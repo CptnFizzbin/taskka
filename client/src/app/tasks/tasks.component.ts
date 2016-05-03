@@ -1,7 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
+
 import {TaskService} from './task.service';
 import {Task} from './../models/task';
-import {TaskComponenet} from "./task.component";
+import {TaskComponenet} from './task.component';
 
 @Component({
     templateUrl: 'app/tasks/tasks.html',
@@ -40,7 +41,7 @@ export class TasksComponent implements OnInit {
                 }
             );
     }
-    
+
     public deleteTask(task:Task) {
         this._taskService.delete(task.id)
             .subscribe(
@@ -50,7 +51,7 @@ export class TasksComponent implements OnInit {
                 error => {
                     console.log(error);
                 }
-            )
+            );
     }
 
     private _clearNewTask() {

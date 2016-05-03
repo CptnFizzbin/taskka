@@ -1,9 +1,12 @@
-import {Component, OnInit, Input} from "angular2/core";
+import {Component, Input} from 'angular2/core';
+
+import {Task} from '../models/task';
 
 @Component({
     selector: 'tka-task',
     templateUrl: 'app/tasks/task.html'
 })
 export class TaskComponenet {
-    @Input() task:Task;
+    @Input()
+    public task:Task;
 }

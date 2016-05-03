@@ -6,7 +6,7 @@ import {Task} from './../models/task';
 
 @Injectable()
 export class TaskService {
-    private serverUrl: String;
+    private serverUrl: string;
 
     constructor(private _http:Http) {
         this.serverUrl = Config.serverAddress + '/tasks';
