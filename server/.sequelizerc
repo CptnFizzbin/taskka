@@ -1,7 +1,7 @@
 var path = require('path')
 
 module.exports = {
-  'config':          path.resolve('db', 'sequrlize.json'),
-  'migrations-path': path.resolve('db', 'migrate'),d
+  'config':          path.resolve('db', 'sequelize.json'),
+  'migrations-path': path.resolve('db', 'migrate'),
   'seeders-path':    path.resolve('db', 'seeders')
 }
