@@ -1,6 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {TaskService} from './task.service';
-import {Task} from './task';
+import {Task} from './../models/task';
 
 @Component({
     templateUrl: 'app/tasks/tasks.html'

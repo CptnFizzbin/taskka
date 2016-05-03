@@ -2,7 +2,7 @@ import {Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
 
 import {Config} from './../config';
-import {Task} from './task';
+import {Task} from './../models/task';
 
 @Injectable()
 export class TaskService {
