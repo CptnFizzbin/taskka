@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "taskka",
+    "password": null,
+    "database": "taskka_dev",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "taskka",
+    "password": null,
+    "database": "taskka_test",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "taskka",
+    "password": null,
+    "database": "taskka_prod",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
