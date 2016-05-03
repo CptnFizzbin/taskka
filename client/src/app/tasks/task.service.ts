@@ -6,16 +6,24 @@ import {Task} from './task';
 
 @Injectable()
 export class TaskService {
+    private serverUrl: String;
+
     constructor(private _http:Http) {
+        this.serverUrl = Config.serverAddress + '/tasks';
     }
 
     public getAll() {
-        return this._http.get(Config.serverAddress + '/tasks')
+        return this._http.get(this.serverUrl)
             .map(res => res.json());
     }
 
     public post(task: Task) {
-        return this._http.post(Config.serverAddress + '/tasks', JSON.stringify(task))
+        return this._http.post(this.serverUrl, JSON.stringify(task))
+            .map(res => res.json());
+    }
+
+    public delete(taskId: number) {
+        return this._http.delete(this.serverUrl + '/' + taskId)
             .map(res => res.json());
     }
 }

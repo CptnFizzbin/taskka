@@ -36,6 +36,18 @@ export class TasksComponent implements OnInit {
                 }
             );
     }
+    
+    public deleteTask(task:Task) {
+        this._taskService.delete(task.id)
+            .subscribe(
+                data => {
+                    this._loadAllTasks();
+                },
+                error => {
+                    console.log(error);
+                }
+            )
+    }
 
     private _clearNewTask() {
         this.newTask = <Task>{ name: '' };
