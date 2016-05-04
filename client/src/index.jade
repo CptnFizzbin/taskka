@@ -26,6 +26,12 @@ head
                     format: 'register',
                     defaultExtension: 'js'
                 }
+            },
+            paths: {
+                lodash: 'lodash/lodash.js'
+            },
+            meta: {
+                lodash: { format: 'amd' }
             }
         });
         System.import('app/main')
