@@ -42,20 +42,20 @@ export class TasksComponent implements OnInit {
             );
     }
 
-    public deleteTask(task:Task) {
-        this._taskService.destroy(task.id)
-            .subscribe(
-                data => {
-                    this._loadAllTasks();
-                },
-                error => {
-                    console.log(error);
-                }
-            );
+    public taskUpdated(task:Task) {
+    }
+
+    public taskDeleted(task:Task) {
+        for (var i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i].id && this.tasks[i].id === task.id) {
+                this.tasks.splice(i, 1);
+                break;
+            }
+        }
     }
 
     private _clearNewTask() {
-        this.newTask = <Task>{ name: '' };
+        this.newTask = <Task>{name: ''};
     }
 
     private _loadAllTasks() {

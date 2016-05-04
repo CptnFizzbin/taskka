@@ -1,10 +1,12 @@
 .task
-    div(*ngIf="!editing.name")
-        span.name {{task.name}}
-        button((click)="editName()") Edit
-    div(*ngIf="editing.name")
-        form((submit)="saveName()")
+    form(#editForm='ngForm')
+        div(*ngIf='!editing')
+            | {{task.name}}
+            span.pull-xs-right
+                a.btn.btn-secondary((click)='edit()') Edit
+                a.btn.btn-danger((click)='destroy()') Delete
+        div(*ngIf='editing')
             .input-group
-                input.form-control(type='text', [(ngModel)]='editTask.name', required)
+                input.form-control(*ngIf='editing', type='text', [(ngModel)]='editTask.name', required)
                 span.input-group-btn
-                    button.btn.btn-secondary(type='submit', [disabled]="saving.name") Save
+                    button.btn.btn-primary(type='submit', [disabled]='saving', (click)='save()') Save
