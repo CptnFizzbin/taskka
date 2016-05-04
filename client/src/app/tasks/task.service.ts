@@ -2,7 +2,6 @@ import {Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
 
 import {Config} from './../config';
-import {Task} from './../models/task';
 
 @Injectable()
 export class TaskService {
@@ -17,12 +16,17 @@ export class TaskService {
             .map(res => res.json());
     }
 
-    public post(task: Task) {
-        return this._http.post(this.serverUrl, JSON.stringify(task))
+    public post(data:any) {
+        return this._http.post(this.serverUrl, JSON.stringify(data))
             .map(res => res.json());
     }
 
-    public delete(taskId: number) {
+    public put(taskId:number, data:any) {
+        return this._http.put(this.serverUrl + '/' + taskId, JSON.stringify(data))
+            .map(res => res.json());
+    }
+
+    public destroy(taskId: number) {
         return this._http.delete(this.serverUrl + '/' + taskId)
             .map(res => res.json());
     }

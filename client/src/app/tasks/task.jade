@@ -1,2 +1,10 @@
 .task
-    span.name {{task.name}}
+    div(*ngIf="!editing.name")
+        span.name {{task.name}}
+        button((click)="editName()") Edit
+    div(*ngIf="editing.name")
+        form((submit)="saveName()")
+            .input-group
+                input.form-control(type='text', [(ngModel)]='editTask.name', required)
+                span.input-group-btn
+                    button.btn.btn-secondary(type='submit', [disabled]="saving.name") Save

@@ -2,12 +2,12 @@ import {Component, OnInit} from 'angular2/core';
 
 import {TaskService} from './task.service';
 import {Task} from './../models/task';
-import {TaskComponenet} from './task.component';
+import {TaskComponent} from './task.component';
 
 @Component({
     templateUrl: 'app/tasks/tasks.html',
     directives: [
-        TaskComponenet
+        TaskComponent
     ]
 })
 export class TasksComponent implements OnInit {
@@ -43,7 +43,7 @@ export class TasksComponent implements OnInit {
     }
 
     public deleteTask(task:Task) {
-        this._taskService.delete(task.id)
+        this._taskService.destroy(task.id)
             .subscribe(
                 data => {
                     this._loadAllTasks();
