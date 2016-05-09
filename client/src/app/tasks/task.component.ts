@@ -3,7 +3,7 @@ import {FORM_DIRECTIVES} from 'angular2/common';
 import * as _ from 'lodash';
 
 import {Task} from '../models/task';
-import {TaskService} from "./task.service";
+import {TaskService} from './task.service';
 
 @Component({
     selector: 'tka-task',
@@ -12,8 +12,8 @@ import {TaskService} from "./task.service";
 })
 export class TaskComponent implements OnInit {
     @Input() public task:Task;
-    @Output() public taskUpdated:EventEmitter = new EventEmitter();
-    @Output() public taskDeleted:EventEmitter = new EventEmitter();
+    @Output() public taskUpdated:EventEmitter<Task> = new EventEmitter();
+    @Output() public taskDeleted:EventEmitter<Task> = new EventEmitter();
 
     public editTask:Task;
     public editing:Boolean;
@@ -31,8 +31,7 @@ export class TaskComponent implements OnInit {
     }
 
     public edit() {
-        if (this.deleted) return;
-
+        if (this.deleted) { return; }
         this.editing = true;
     }
 
@@ -44,7 +43,7 @@ export class TaskComponent implements OnInit {
                     this.ngOnInit();
                     this.deleted = true;
 
-                    this.taskDeleted.emit(this.task)
+                    this.taskDeleted.emit(this.task);
                 },
                 error => {
                     console.log(error);
@@ -55,7 +54,7 @@ export class TaskComponent implements OnInit {
     }
 
     public save() {
-        if (this.deleted) return;
+        if (this.deleted) { return; }
         this.saving = true;
 
         this._taskService.put(this.editTask.id, this.editTask)
@@ -64,7 +63,7 @@ export class TaskComponent implements OnInit {
                     this.task = data;
                     this.ngOnInit();
 
-                    this.taskUpdated.emit(this.task)
+                    this.taskUpdated.emit(this.task);
                 }
             );
     }
