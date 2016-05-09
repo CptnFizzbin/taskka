@@ -8,8 +8,7 @@ import {TasksComponent} from './tasks/tasks.component';
 
 @Routes([
     {
-        path: '/tasks',
-        component: TasksComponent
+        path: '/', component: TasksComponent
     }
 ])
 
