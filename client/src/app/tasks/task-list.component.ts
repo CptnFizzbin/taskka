@@ -1,4 +1,6 @@
-import {Component, Input} from "angular2/core";
+import {Component, Input} from 'angular2/core';
+
+import {Task} from './../models/task';
 
 @Component({
     selector: 'tka-task-list',
@@ -7,7 +9,7 @@ import {Component, Input} from "angular2/core";
 export class TaskListComponent {
     @Input() public tasks:Array<Task> = [];
     @Input() public selectedTask:Task = null;
-    
+
     public selectTask(task) {
         this.selectedTask = task;
     }
