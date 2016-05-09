@@ -1,18 +1,15 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import { Component } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
+import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
 
 import {TaskService} from './tasks/task.service';
-
 import {NavbarComponent} from './navbar/navbar.component';
 import {TasksComponent} from './tasks/tasks.component';
 
-@RouteConfig([
+@Routes([
     {
         path: '/tasks',
-        name: 'Tasks',
-        component: TasksComponent,
-        useAsDefault: true
+        component: TasksComponent
     }
 ])
 
@@ -31,5 +28,5 @@ import {TasksComponent} from './tasks/tasks.component';
 })
 
 export class AppComponent {
-    public title = 'Angular 2 Gulp Base';
+    public title = 'Taskka';
 }

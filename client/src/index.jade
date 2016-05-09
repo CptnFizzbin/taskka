@@ -9,33 +9,14 @@ head
     // 1. Load libraries
     // IE required polyfills, in this exact order
     script(src="es6-shim/es6-shim.min.js")
-    script(src="systemjs/dist/system-polyfills.js")
-    script(src="angular2/es6/dev/src/testing/shims_for_IE.js")
+
+    script(src="zone.js/dist/zone.js")
+    script(src="reflect-metadata/Reflect.js")
     script(src="systemjs/dist/system.src.js")
-    script(src="angular2/bundles/router.dev.js")
-    script(src="angular2/bundles/http.dev.js")
-    script(src="rxjs/bundles/Rx.js")
-    script(src="angular2/bundles/angular2-polyfills.js")
-    script(src="angular2/bundles/angular2.dev.js")
 
     // 2. Configure SystemJS
-    script.
-        System.config({
-            packages: {
-                app: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            },
-            paths: {
-                lodash: 'lodash/lodash.js'
-            },
-            meta: {
-                lodash: { format: 'amd' }
-            }
-        });
-        System.import('app/main')
-                .then(null, console.error.bind(console));
+    script(src="systemjs.config.js")
+    script System.import('app').catch(function(err){ console.error(err); });
 
 body
     my-app Loading...

@@ -1,5 +1,5 @@
-import {Component, Input, Output, OnInit, EventEmitter} from 'angular2/core';
-import {FORM_DIRECTIVES} from 'angular2/common';
+import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
+import {FORM_DIRECTIVES} from '@angular/common';
 import * as _ from 'lodash';
 
 import {Task} from '../models/task';
@@ -12,8 +12,8 @@ import {TaskService} from './task.service';
 })
 export class TaskComponent implements OnInit {
     @Input() public task:Task;
-    @Output() public taskUpdated:EventEmitter<Task> = new EventEmitter();
-    @Output() public taskDeleted:EventEmitter<Task> = new EventEmitter();
+    @Output() public taskUpdated:EventEmitter<any> = new EventEmitter();
+    @Output() public taskDeleted:EventEmitter<any> = new EventEmitter();
 
     public editTask:Task;
     public editing:Boolean;

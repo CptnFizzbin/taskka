@@ -10,7 +10,7 @@ module.exports = config = {
     },
 
     fileExtensions: {
-        statics: ['html', 'css', 'json'],
+        statics: ['html', 'css', 'json', 'js'],
         jade: ['jade'],
         images: ['png', 'gif', 'jpg', 'jpeg', 'svg'],
         sass: ['scss', 'sass'],
