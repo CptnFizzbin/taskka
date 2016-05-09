@@ -15,7 +15,7 @@ module.exports = config = {
         images: ['png', 'gif', 'jpg', 'jpeg', 'svg'],
         sass: ['scss', 'sass'],
         typescript: ['ts'],
-        inject: ['scss', 'css', 'js']
+        inject: ['scss', 'css']
     },
 
     buildSrcGlob: function (extensionType, srcOverride) {
