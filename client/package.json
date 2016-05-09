@@ -11,16 +11,22 @@
     "postinstall": "typings install"
   },
   "dependencies": {
-    "angular2": "^2.0.0-beta.16",
-    "bootstrap": "git@github.com:twbs/bootstrap.git#v4.0.0-alpha.2",
+    "@angular/common": "^2.0.0-rc.1",
+    "@angular/compiler": "^2.0.0-rc.1",
+    "@angular/core": "^2.0.0-rc.1",
+    "@angular/platform-browser": "^2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
+    "bootstrap": "git+ssh://git@github.com/twbs/bootstrap.git#v4.0.0-alpha.2",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.35.0",
     "gulp-sass-glob": "^1.0.6",
-    "lodash": "^4.11.2",
-    "ng2-bootstrap": "^1.0.15",
+    "gulp-typescript": "^2.13.4",
+    "lodash": "^4.12.0",
+    "ng2-bootstrap": "^1.0.16",
     "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.2",
+    "rxjs": "^5.0.0-beta.6",
     "systemjs": "0.19.24",
+    "tslint": "^3.9.0",
     "zone.js": "^0.6.6"
   },
   "devDependencies": {
