@@ -1,13 +1,16 @@
 import {Component, OnInit} from 'angular2/core';
+import {RouteConfig} from "angular2/router";
 
 import {TaskService} from './task.service';
 import {Task} from './../models/task';
 import {TaskComponent} from './task.component';
+import {TaskListComponent} from "./task-list.component";
 
 @Component({
     templateUrl: 'app/tasks/tasks.html',
     directives: [
-        TaskComponent
+        TaskComponent,
+        TaskListComponent
     ]
 })
 export class TasksComponent implements OnInit {

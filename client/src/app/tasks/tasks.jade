@@ -1,9 +1,10 @@
 h1 tasks
 .row
     .col-lg-4
-        tka-task(*ngFor='#task of tasks', [task]='task', (taskUpdated)='taskUpdated($event)', (taskDeleted)='taskDeleted($event)')
         form((ngSubmit)='addTask()')
             .input-group
                 input.form-control(type='text', [(ngModel)]='newTask.name', required, ngControl='name')
                 span.input-group-btn
                     button.btn.btn-secondary(type='submit', [disabled]="creatingNewTask") Add
+
+        tka-task-list([tasks]="tasks")

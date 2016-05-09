@@ -1,0 +1,8 @@
+.task-list
+    .header Task List Test
+    ul.list
+        li.task-list-item(*ngFor="#task of tasks", (click)="selectTask(task)", [class.selected]="task === selectedTask")
+            .name {{task.name}}
+    div
+        span Selected Task:
+            span(*ngIf="selectedTask") {{selectedTask.name}}
